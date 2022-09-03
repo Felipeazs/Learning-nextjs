@@ -17,6 +17,10 @@
 
 # misc
 .DS_Store
+/.vscode
+.prettierrc.json
+notas
+
 
 # debug
 npm-debug.log*
