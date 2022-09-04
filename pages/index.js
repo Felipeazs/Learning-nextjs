@@ -1,5 +1,8 @@
 import Head from 'next/head'
+import Link from 'next/link'
+
 import Layout, { siteTitle } from '../components/Layout'
+import Date from '../components/Date'
 import utilStyles from '../styles/utils.module.css'
 
 //helper function to parse md files
@@ -25,11 +28,13 @@ export default function Home({ allPostsData }) {
                         <li
                             className={utilStyles.listItem}
                             key={id}>
-                            {title}
+                            <Link href={`/posts/${id}`}>
+                                <a>{title}</a>
+                            </Link>
                             <br />
-                            {id}
-                            <br />
-                            {date}
+                            <small className={utilStyles.lightText}>
+                                <Date dateString={date} />
+                            </small>
                         </li>
                     ))}
                 </ul>
